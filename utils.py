@@ -19,5 +19,5 @@ def get_by_pk(pk):
 
 def get_by_skill(skill_name):
     candidates = load_candidates()
-    filtered_candidates = [candidate for candidate in candidates if skill_name.lower() in candidate['skills'].lower()]
+    filtered_candidates = [candidate for candidate in candidates if skill_name.lower() in candidate['skills'].lower().split(', ')]
     return filtered_candidates
