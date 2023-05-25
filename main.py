@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, get_all, get_all_skills
 
-
 app = Flask(__name__)
 print(get_all_skills())
 print(get_all())
+
+
 # Главная страница
 @app.route('/')
 def home():
@@ -25,6 +26,7 @@ def skill_search(skill):
     candidates = get_by_skill(skill)  # Получение списка кандидатов по навыку
     return render_template('skill_search.html', candidates=candidates)
 
+
 @app.route('/candidates/edit/<int:pk>', methods=['GET', 'POST'])
 def edit_candidate(pk):
     if request.method == 'POST':
@@ -36,18 +38,17 @@ def edit_candidate(pk):
         candidate = get_by_pk(pk)
         return render_template('edit_candidate.html', candidate=candidate)
 
+
 @app.route('/candidates')
 def candidates():
     candidates = get_all()
     return render_template('candidate_list.html', candidates=candidates)
 
 
-
 @app.route('/skills')
 def skills():
     all_skills = get_all_skills()
     return render_template('skill_list.html', skills=all_skills)
-
 
 
 if __name__ == '__main__':
