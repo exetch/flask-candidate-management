@@ -3,8 +3,8 @@ from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, ge
 
 
 app = Flask(__name__)
-
-
+print(get_all_skills())
+print(get_all())
 # Главная страница
 @app.route('/')
 def home():
@@ -28,31 +28,24 @@ def skill_search(skill):
 @app.route('/candidates/edit/<int:pk>', methods=['GET', 'POST'])
 def edit_candidate(pk):
     if request.method == 'POST':
-        # Получите данные из формы редактирования и обновите информацию о кандидате
-        # с помощью функции update_candidate(pk, data) из utils.py
-        data = request.form  # Получение данных из формы редактирования
-
-        # Обновление информации о кандидате с помощью функции update_candidate(pk, data)
+        data = request.form
         update_candidate(pk, data)
-        # Перенаправьте пользователя на страницу с подробной информацией о кандидате
         return redirect(url_for('candidate_details', pk=pk))
 
     else:
-        # Получите данные кандидата по pk с помощью функции get_by_pk(pk) из utils.py
         candidate = get_by_pk(pk)
-        # Отобразите форму редактирования с текущими данными кандидата
         return render_template('edit_candidate.html', candidate=candidate)
 
 @app.route('/candidates')
 def candidates():
-    candidates = get_all()  # Получение списка всех кандидатов
+    candidates = get_all()
     return render_template('candidate_list.html', candidates=candidates)
 
 
 
 @app.route('/skills')
 def skills():
-    all_skills = get_all_skills()  # Получение списка всех навыков
+    all_skills = get_all_skills()
     return render_template('skill_list.html', skills=all_skills)
 
 
