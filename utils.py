@@ -10,6 +10,14 @@ def get_all():
     names = [candidate['name'] for candidate in candidates]
     return names
 
+def get_all_skills():
+    all_skills = set()
+    candidates = load_candidates()
+    for candidate in candidates:
+        candidate_skills = candidate.get('skills', '').split(', ')
+        all_skills.update(candidate_skills)
+    return sorted(all_skills)
+
 def get_by_pk(pk):
     candidates = load_candidates()
     for candidate in candidates:
@@ -21,3 +29,12 @@ def get_by_skill(skill_name):
     candidates = load_candidates()
     filtered_candidates = [candidate for candidate in candidates if skill_name.lower() in candidate['skills'].lower().split(', ')]
     return filtered_candidates
+
+def update_candidate(pk, data):
+    # Ваш код для обновления информации о кандидате по pk
+    # Используйте переданные данные из формы редактирования (параметр data)
+    # и выполните соответствующие действия для обновления информации
+
+    # Верните True, если обновление прошло успешно, иначе False
+    return True  # или False в зависимости от результата обновления
+

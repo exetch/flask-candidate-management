@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
 <html>
 <head>
     <meta charset="UTF-8">
@@ -10,6 +12,13 @@
         Имя кандидата - {{ candidate['name'] }}
         Позиция кандидата - {{ candidate['position'] }}
         Навыки - {{ candidate['skills'] }}
+        <a href="{{ url_for('edit_candidate', pk=candidate['pk']) }}" class="btn btn-primary">Редактировать</a>
+
+
     </pre>
 </body>
-</html>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Редактирование кандидата</h2>
+
+  <form method="POST">
+    <div class="form-group">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" value="{{ candidate['name'] }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="position">Позиция:</label>
+      <input type="text" id="position" name="position" value="{{ candidate['position'] }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Навыки (через запятую):</label>
+      <input type="text" id="skills" name="skills" value="{{ candidate['skills'] }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Возраст:</label>
+      <input type="number" id="age" name="age" value="{{ candidate['age'] }}" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+  </form>
+{% endblock %}
