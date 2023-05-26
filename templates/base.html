@@ -26,7 +26,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="candidatesDropdown">
           {% for candidate in candidates %}
-            <a class="dropdown-item" href="/candidates/{{ candidate.pk }}">{{ candidate.name }}</a>
+            <a class="dropdown-item" href="/candidate/{{ candidate.pk }}">{{ candidate.name }}</a>
           {% endfor %}
         </div>
       </li>

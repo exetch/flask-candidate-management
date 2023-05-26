@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <meta charset="UTF-8">
+  <h1>Список навыков</h1>
+  <ul>
+    {% for skill in skills %}
+      <li><a href="{{ url_for('skill_search', skill=skill) }}">{{ skill }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
