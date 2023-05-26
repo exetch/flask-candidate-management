@@ -14,7 +14,7 @@ def home():
 
 
 # Страница кандидата по pk
-@app.route('/candidates/<pk>')
+@app.route('/candidate/<pk>')
 def candidate_details(pk):
     candidate = get_by_pk(pk)  # Получение данных кандидата по pk
     return render_template('candidate.html', candidate=candidate)
@@ -42,13 +42,13 @@ def edit_candidate(pk):
 @app.route('/candidates')
 def candidates():
     candidates = get_all()
-    return render_template('candidate_list.html', candidates=candidates)
+    return render_template('candidate.html', candidates=candidates)
 
 
 @app.route('/skills')
 def skills():
     all_skills = get_all_skills()
-    return render_template('skill_list.html', skills=all_skills)
+    return render_template('skills.html', skills=all_skills)
 
 
 if __name__ == '__main__':
