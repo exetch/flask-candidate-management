@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, get_all, get_all_skills, save_candidate, generate_pk
 
 app = Flask(__name__)
-print(get_all())
+
 
 
 
