@@ -1,4 +1,5 @@
 import json
+import re
 
 
 def load_candidates():
@@ -61,11 +62,35 @@ def save_candidate(candidate):
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 
-
-
 def generate_pk():
     data = load_candidates()
     max_pk = max(data, key=lambda candidate: candidate['pk'])['pk']
     new_pk = max_pk + 1
     return new_pk
+
+
+def search_candidates_by_criteria(query):
+    with open('candidates.json', 'r', encoding='utf-8') as file:
+        candidates = json.load(file)
+
+    results = []
+    for candidate in candidates:
+        if query['name'] and not re.search(fr'\b{re.escape(query["name"])}\b', candidate['name'], flags=re.IGNORECASE):
+            continue
+        if query['position'] and not re.search(fr'\b{re.escape(query["position"])}\b', candidate['position'], flags=re.IGNORECASE):
+            continue
+        if query['age_min'] and candidate['age'] < int(query['age_min']):
+            continue
+        if query['age_max'] and candidate['age'] > int(query['age_max']):
+            continue
+        if query['gender'] and not re.search(fr'\b{re.escape(query["gender"])}\b', candidate['gender'], flags=re.IGNORECASE):
+            continue
+        if query['skills']:
+            required_skills = re.split(r',\s*|\s+', query['skills'])
+            candidate_skills = re.split(r',\s*|\s+', candidate['skills'])
+            if not all(skill.lower() in candidate_skills for skill in required_skills):
+                continue
+        results.append(candidate)
+
+    return results
 

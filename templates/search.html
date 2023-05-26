@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Поиск кандидатов</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <form method="POST" action="{{ url_for('search_candidates') }}" id="search-form">
+        <div class="form-group">
+          <label for="name">Имя:</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="position">Позиция:</label>
+          <input type="text" class="form-control" id="position" name="position">
+        </div>
+        <div class="form-group">
+          <label for="age_min">Возраст (от):</label>
+          <input type="number" class="form-control" id="age_min" name="age_min">
+        </div>
+        <div class="form-group">
+          <label for="age_max">Возраст (до):</label>
+          <input type="number" class="form-control" id="age_max" name="age_max">
+        </div>
+        <div class="form-group">
+          <label for="gender">Пол:</label>
+          <select class="form-control" id="gender" name="gender">
+            <option value="">-- Выбрать --</option>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="skills">Навыки:</label>
+          <input type="text" class="form-control" id="skills" name="skills">
+          <small class="form-text text-muted">Разделяйте навыки запятыми или пробелами.</small>
+        </div>
+        <button type="submit" class="btn btn-primary" id="search-btn" disabled>Найти кандидатов</button>
+      </form>
+    </div>
+    <div class="col-md-8">
+      {% if results %}
+        <h2>Результаты поиска:</h2>
+        {% for candidate in results %}
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{ candidate['picture'] }}" class="img-fluid" alt="Candidate Picture">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ candidate['name'] }}</h5>
+                  <p class="card-text">Позиция: {{ candidate['position'] }}</p>
+                  <p class="card-text">Возраст: {{ candidate['age'] }}</p>
+                  <p class="card-text">Навыки: {{ candidate['skills'] }}</p>
+                  <p class="card-text">Пол: {{ candidate['gender'] }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% elif search_performed %}
+        <p>По данным критериям не нашлось кандидатов.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    // Проверка на ввод хотя бы одного критерия
+    const form = document.getElementById('search-form');
+    const searchBtn = document.getElementById('search-btn');
+
+    form.addEventListener('input', function() {
+      const inputs = form.querySelectorAll('input, select');
+      let isCriteriaEntered = false;
+      for (const input of inputs) {
+        if (input.value.trim() !== '') {
+          isCriteriaEntered = true;
+          break;
+        }
+      }
+      searchBtn.disabled = !isCriteriaEntered;
+    });
+  </script>
+{% endblock %}
+
+
+
+
+

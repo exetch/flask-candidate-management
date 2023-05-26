@@ -10,6 +10,177 @@
   },
   {
     "pk": 2,
+    "name": "John Smith",
+    "picture": "https://picsum.photos/200",
+    "position": "Python Developer",
+    "gender": "male",
+    "age": 32,
+    "skills": "python, django"
+  },
+  {
+    "pk": 3,
+    "name": "Emily Johnson",
+    "picture": "https://picsum.photos/200",
+    "position": "Frontend Developer",
+    "gender": "female",
+    "age": 28,
+    "skills": "html, css, javascript"
+  },
+  {
+    "pk": 4,
+    "name": "Alex Turner",
+    "picture": "https://picsum.photos/200",
+    "position": "UI/UX Designer",
+    "gender": "male",
+    "age": 35,
+    "skills": "ui/ux design, photoshop, sketch"
+  },
+  {
+    "pk": 5,
+    "name": "Sophia Martinez",
+    "picture": "https://picsum.photos/200",
+    "position": "Data Analyst",
+    "gender": "female",
+    "age": 31,
+    "skills": "data analysis, statistics, sql"
+  },
+  {
+    "pk": 6,
+    "name": "Daniel Clark",
+    "picture": "https://picsum.photos/200",
+    "position": "Full Stack Developer",
+    "gender": "male",
+    "age": 29,
+    "skills": "javascript, python, react"
+  },
+  {
+    "pk": 7,
+    "name": "Olivia Walker",
+    "picture": "https://picsum.photos/200",
+    "position": "Product Manager",
+    "gender": "female",
+    "age": 37,
+    "skills": "product management, agile, leadership"
+  },
+  {
+    "pk": 8,
+    "name": "William Thompson",
+    "picture": "https://picsum.photos/200",
+    "position": "DevOps Engineer",
+    "gender": "male",
+    "age": 33,
+    "skills": "devops, docker, kubernetes"
+  },
+  {
+    "pk": 9,
+    "name": "Ava White",
+    "picture": "https://picsum.photos/200",
+    "position": "Graphic Designer",
+    "gender": "female",
+    "age": 26,
+    "skills": "graphic design, illustrator, indesign"
+  },
+  {
+    "pk": 10,
+    "name": "James Anderson",
+    "picture": "https://picsum.photos/200",
+    "position": "Backend Developer",
+    "gender": "male",
+    "age": 30,
+    "skills": "python, django, flask"
+  },
+  {
+    "pk": 11,
+    "name": "Mia Harris",
+    "picture": "https://picsum.photos/200",
+    "position": "Data Scientist",
+    "gender": "female",
+    "age": 34,
+    "skills": "data science, machine learning, python"
+  },
+  {
+    "pk": 12,
+    "name": "Benjamin Wilson",
+    "picture": "https://picsum.photos/200",
+    "position": "Mobile App Developer",
+    "gender": "male",
+    "age": 27,
+    "skills": "mobile app development, swift, kotlin"
+  },
+  {
+    "pk": 13,
+    "name": "Scarlett Brown",
+    "picture": "https://picsum.photos/200",
+    "position": "UI Designer",
+    "gender": "female",
+    "age": 29,
+    "skills": "ui design, wireframing, prototyping"
+  },
+  {
+    "pk": 14,
+    "name": "Logan Davis",
+    "picture": "https://picsum.photos/200",
+    "position": "Network Engineer",
+    "gender": "male",
+    "age": 31,
+    "skills": "networking, cisco, routing"
+  },
+  {
+    "pk": 15,
+    "name": "Victoria Rodriguez",
+    "picture": "https://picsum.photos/200",
+    "position": "Marketing Manager",
+    "gender": "female",
+    "age": 38,
+    "skills": "marketing strategy, digital marketing, SEO"
+  },
+  {
+    "pk": 16,
+    "name": "Michael Walker",
+    "picture": "https://picsum.photos/200",
+    "position": "Software Engineer",
+    "gender": "male",
+    "age": 33,
+    "skills": "software development, java, c++"
+  },
+  {
+    "pk": 17,
+    "name": "Emma Lee",
+    "picture": "https://picsum.photos/200",
+    "position": "Frontend Developer",
+    "gender": "female",
+    "age": 27,
+    "skills": "html, css, javascript"
+  },
+  {
+    "pk": 18,
+    "name": "Ethan Thompson",
+    "picture": "https://picsum.photos/200",
+    "position": "Data Analyst",
+    "gender": "male",
+    "age": 29,
+    "skills": "data analysis, statistics, sql"
+  },
+  {
+    "pk": 19,
+    "name": "Isabella Harris",
+    "picture": "https://picsum.photos/200",
+    "position": "Product Manager",
+    "gender": "female",
+    "age": 35,
+    "skills": "product management, agile, leadership"
+  },
+  {
+    "pk": 20,
+    "name": "Noah Martinez",
+    "picture": "https://picsum.photos/200",
+    "position": "Full Stack Developer",
+    "gender": "male",
+    "age": 32,
+    "skills": "javascript, python, react"
+  },
+  {
+    "pk": 21,
     "name": "Sheri Torres",
     "picture": "https://picsum.photos/200",
     "position": "Delphi developer",
@@ -18,7 +189,7 @@
     "skills": "Delphi, pascal, fortran, basic"
   },
   {
-    "pk": 3,
+    "pk": 22,
     "name": "Burt Stein",
     "picture": "https://picsum.photos/200",
     "position": "Team lead",
@@ -27,7 +198,7 @@
     "skills": "делегирование, пользоваться календарем, обсуждать важные вопросы"
   },
   {
-    "pk": 4,
+    "pk": 23,
     "name": "Bauer Adkins",
     "picture": "https://picsum.photos/200",
     "position": "CTO",
@@ -36,7 +207,7 @@
     "skills": "very important face"
   },
   {
-    "pk": 5,
+    "pk": 24,
     "name": "Day Holloway",
     "picture": "https://picsum.photos/200",
     "position": "HR manager",
@@ -45,7 +216,7 @@
     "skills": "LinkedIn, telegram, spam, spam, spam"
   },
   {
-    "pk": 6,
+    "pk": 25,
     "name": "Austin Cochran",
     "picture": "https://picsum.photos/200",
     "position": "python-develop",
@@ -54,7 +225,7 @@
     "skills": "python, html"
   },
   {
-    "pk": 7,
+    "pk": 26,
     "name": "Sheree Love",
     "picture": "https://picsum.photos/200",
     "position": "Django developer",
@@ -63,7 +234,7 @@
     "skills": "Python, Django, flask"
   },
   {
-    "pk": 8,
+    "pk": 27,
     "name": "Sofi Tucker",
     "position": "Go developer",
     "skills": "coding, sleeping, eating",
@@ -72,7 +243,7 @@
     "age": 34
   },
   {
-    "pk": 9,
+    "pk": 28,
     "name": "David Liter",
     "position": "Junior-developer",
     "skills": "python, SQL, Django, Flask",

@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
-from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, get_all, get_all_skills, save_candidate, generate_pk
+from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, \
+    get_all, get_all_skills, save_candidate, \
+    generate_pk, search_candidates_by_criteria
 
 app = Flask(__name__)
-
-
 
 
 # Главная страница
@@ -66,6 +66,25 @@ def add_candidate():
         save_candidate(candidate)
         return redirect(url_for('index'))
     return render_template('add_candidate.html')
+
+
+@app.route('/search_candidates', methods=['GET', 'POST'])
+def search_candidates():
+    if request.method == 'POST':
+        query = {
+            'name': request.form.get('name'),
+            'position': request.form.get('position'),
+            'age_min': request.form.get('age_min'),
+            'age_max': request.form.get('age_max'),
+            'gender': request.form.get('gender'),
+            'skills': request.form.get('skills')
+        }
+        results = search_candidates_by_criteria(query)
+        return render_template('search.html', results=results)
+    return render_template('search.html')
+
+
+
 
 
 if __name__ == '__main__':
