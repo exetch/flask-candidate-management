@@ -61,5 +61,23 @@
     "gender": "female",
     "age": 33,
     "skills": "Python, Django, flask"
+  },
+  {
+    "pk": 8,
+    "name": "Sofi Tucker",
+    "position": "Go developer",
+    "skills": "coding, sleeping, eating",
+    "picture": "https://picsum.photos/200",
+    "gender": "female",
+    "age": 34
+  },
+  {
+    "pk": 9,
+    "name": "David Liter",
+    "position": "Junior-developer",
+    "skills": "python, SQL, Django, Flask",
+    "picture": "https://picsum.photos/200",
+    "gender": "male",
+    "age": 36
   }
 ]

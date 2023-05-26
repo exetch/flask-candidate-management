@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница</title>
-</head>
-<body>
-    {% for candidate in candidates %}
+  <h1>Flask Candidate Management Project</h1>
+  <p>Includes functionality for data loading, skill-based search, adding, editing and displaying candidate information.</p>
+  <a href="{{ url_for('add_candidate') }}" class="btn btn-primary">Добавить нового кандидата</a>
+
+  <h2>Список кандидатов:</h2>
+  {% for candidate in candidates %}
     <pre>
-        Имя кандидата - {{ candidate['name'] }}
-        Позиция кандидата - {{ candidate['position'] }}
-        Навыки - {{ candidate['skills'] }}
+      Имя кандидата: {{ candidate['name'] }}
+      Позиция: {{ candidate['position'] }}
+      Навыки: {{ candidate['skills'] }}
     </pre>
-    {% endfor %}
-</body>
-</html>
+  {% endfor %}
 {% endblock %}
+
 

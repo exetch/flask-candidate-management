@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, get_all, get_all_skills
+from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, get_all, get_all_skills, save_candidate, generate_pk
 
 app = Flask(__name__)
 print(get_all())
@@ -8,7 +8,7 @@ print(get_all())
 
 # Главная страница
 @app.route('/')
-def home():
+def index():
     candidates = load_candidates()
     return render_template('index.html', candidates=candidates)
 
@@ -49,6 +49,23 @@ def candidates():
 def skill_list():
     skills = get_all_skills()
     return render_template('skills.html', skills=skills)
+
+
+@app.route('/add', methods=['GET', 'POST'])
+def add_candidate():
+    if request.method == 'POST':
+        candidate = {
+            'pk': generate_pk(),
+            'name': request.form['name'],
+            'position': request.form['position'],
+            'skills': request.form['skills'],
+            'picture': 'https://picsum.photos/200',
+            'gender': request.form['gender'],
+            'age': int(request.form['age'])
+        }
+        save_candidate(candidate)
+        return redirect(url_for('index'))
+    return render_template('add_candidate.html')
 
 
 if __name__ == '__main__':

@@ -53,3 +53,19 @@ def update_candidate(pk, data):
     with open('candidates.json', 'w', encoding='utf-8') as file:
         json.dump(candidates, file, indent=2, ensure_ascii=False)
 
+
+def save_candidate(candidate):
+    data = load_candidates()
+    data.append(candidate)
+    with open('candidates.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
+
+
+
+
+def generate_pk():
+    data = load_candidates()
+    max_pk = max(data, key=lambda candidate: candidate['pk'])['pk']
+    new_pk = max_pk + 1
+    return new_pk
+

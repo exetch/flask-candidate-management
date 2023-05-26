@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Добавление нового кандидата</h2>
+
+  <form method="POST" action="{{ url_for('add_candidate') }}">
+    <div class="form-group">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="position">Позиция:</label>
+      <input type="text" id="position" name="position" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Навыки (через запятую):</label>
+      <input type="text" id="skills" name="skills" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Пол:</label>
+      <select id="gender" name="gender" class="form-control" required>
+        <option value="male">Мужской</option>
+        <option value="female">Женский</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Возраст:</label>
+      <input type="number" id="age" name="age" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Добавить</button>
+  </form>
+{% endblock %}
+
