@@ -5,15 +5,6 @@
   <p>Includes functionality for data loading, skill-based search, adding, editing and displaying candidate information.</p>
   <a href="{{ url_for('add_candidate') }}" class="btn btn-primary">Добавить нового кандидата</a>
   <a href="{{ url_for('search_candidates') }}" class="btn btn-primary">Поиск кандидатов</a>
-
-  <h2>Список кандидатов:</h2>
-  {% for candidate in candidates %}
-    <pre>
-      Имя кандидата: {{ candidate['name'] }}
-      Позиция: {{ candidate['position'] }}
-      Навыки: {{ candidate['skills'] }}
-    </pre>
-  {% endfor %}
 {% endblock %}
 
 

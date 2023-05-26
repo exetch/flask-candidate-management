@@ -1,21 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Поиск по навыку</title>
-</head>
-<body>
-    {% for candidate in candidates %}
-    <pre>
-        Имя кандидата - {{ candidate['name'] }}
-        Позиция кандидата - {{ candidate['position'] }}
-        Навыки - {{ candidate['skills'] }}
-    </pre>
-    {% endfor %}
-</body>
-</html>
+  <h1>Поиск по навыку</h1>
+  {% for candidate in candidates %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Имя кандидата: {{ candidate['name'] }}</h5>
+        <p class="card-text">Позиция кандидата: {{ candidate['position'] }}</p>
+        <p class="card-text">Навыки: {{ candidate['skills'] }}</p>
+      </div>
+    </div>
+    <br>
+  {% endfor %}
 {% endblock %}
 
 

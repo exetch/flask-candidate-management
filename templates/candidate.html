@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Данные о кандидате</title>
-</head>
-<body>
-<img src="{{ candidate['picture'] }}">
-    <pre>
-        Имя кандидата - {{ candidate['name'] }}
-        Позиция кандидата - {{ candidate['position'] }}
-        Навыки - {{ candidate['skills'] }}
-        <a href="{{ url_for('edit_candidate', pk=candidate['pk']) }}" class="btn btn-primary">Редактировать</a>
-    </pre>
-</body>
-</html>
+  <h1>Данные о кандидате</h1>
+  <div class="card">
+    <img src="{{ candidate['picture'] }}" class="card-img-top" style="width: 300px; height: auto;" alt="Картинка кандидата">
+    <div class="card-body">
+      <h5 class="card-title">Имя кандидата: {{ candidate['name'] }}</h5>
+      <p class="card-text">Позиция кандидата: {{ candidate['position'] }}</p>
+      <p class="card-text">Навыки: {{ candidate['skills'] }}</p>
+      <a href="{{ url_for('edit_candidate', pk=candidate['pk']) }}" class="btn btn-primary">Редактировать</a>
+    </div>
+  </div>
 {% endblock %}
+
+
 
 
 
