@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, get_all, get_all_skills
 
 app = Flask(__name__)
-print(get_all_skills())
+print(get_all())
 
 
 
@@ -39,10 +39,10 @@ def edit_candidate(pk):
         return render_template('edit_candidate.html', candidate=candidate)
 
 
-# @app.route('/candidate')
-# def candidates():
-#     candidates = get_all()
-#     return render_template('candidate.html', candidates=candidates)
+@app.route('/candidates')
+def candidates():
+    candidates = get_all()
+    return render_template('candidates.html', candidates=candidates)
 
 
 @app.route('/skills')

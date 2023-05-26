@@ -20,29 +20,14 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Главная</a>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="candidatesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Кандидаты
-        </a>
-        <div class="dropdown-menu" aria-labelledby="candidatesDropdown">
-          {% for candidate in candidates %}
-            <a class="dropdown-item" href="/candidate/{{ candidate.pk }}">{{ candidate.name }}</a>
-          {% endfor %}
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/candidates">Кандидаты</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="skillsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Поиск по навыкам
-        </a>
-        <div class="dropdown-menu" aria-labelledby="skillsDropdown">
-          {% for skill in skills %}
-            <a class="dropdown-item" href="/skills/{{ skill }}">{{ skill }}</a>
-          {% endfor %}
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/skills">Поиск по навыкам</a>
       </li>
     </ul>
   </nav>
-
 
   <div class="container">
     {% block content %}
@@ -54,3 +39,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

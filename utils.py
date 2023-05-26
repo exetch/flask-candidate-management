@@ -9,8 +9,7 @@ def load_candidates():
 
 def get_all():
     candidates = load_candidates()
-    names = [candidate['name'] for candidate in candidates]
-    return names
+    return candidates
 
 
 def get_all_skills():

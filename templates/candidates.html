@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Список кандидатов</h1>
+  <ul>
+    {% for candidate in candidates %}
+      <li><a href="/candidate/{{ candidate.pk }}">{{ candidate.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
