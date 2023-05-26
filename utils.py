@@ -36,5 +36,20 @@ def get_by_skill(skill_name):
     return filtered_candidates
 
 
+import json
+
+
 def update_candidate(pk, data):
-    return True
+    candidates = load_candidates()
+    for candidate in candidates:
+        if candidate['pk'] == pk:
+            # Обновление данных кандидата
+            candidate['name'] = data['name']
+            candidate['position'] = data['position']
+            candidate['skills'] = data['skills']
+            candidate['age'] = int(data['age'])
+            break
+
+    with open('candidates.json', 'w', encoding='utf-8') as file:
+        json.dump(candidates, file, indent=2, ensure_ascii=False)
+
