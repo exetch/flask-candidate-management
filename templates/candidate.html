@@ -7,17 +7,15 @@
     <title>Данные о кандидате</title>
 </head>
 <body>
-    <img src="{{ candidate['picture'] }}">
+<img src="{{ candidate['picture'] }}">
     <pre>
         Имя кандидата - {{ candidate['name'] }}
         Позиция кандидата - {{ candidate['position'] }}
         Навыки - {{ candidate['skills'] }}
         <a href="{{ url_for('edit_candidate', pk=candidate['pk']) }}" class="btn btn-primary">Редактировать</a>
-
-
     </pre>
 </body>
-
+</html>
 {% endblock %}
 
 

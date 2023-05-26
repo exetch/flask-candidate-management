@@ -3,7 +3,7 @@ from utils import load_candidates, get_by_pk, get_by_skill, update_candidate, ge
 
 app = Flask(__name__)
 print(get_all_skills())
-print(get_all())
+
 
 
 # Главная страница
@@ -14,7 +14,7 @@ def home():
 
 
 # Страница кандидата по pk
-@app.route('/candidate/<pk>')
+@app.route('/candidate/<int:pk>')
 def candidate_details(pk):
     candidate = get_by_pk(pk)  # Получение данных кандидата по pk
     return render_template('candidate.html', candidate=candidate)
@@ -27,7 +27,7 @@ def skill_search(skill):
     return render_template('skill_search.html', candidates=candidates)
 
 
-@app.route('/candidates/edit/<int:pk>', methods=['GET', 'POST'])
+@app.route('/candidate/edit/<int:pk>', methods=['GET', 'POST'])
 def edit_candidate(pk):
     if request.method == 'POST':
         data = request.form
@@ -39,16 +39,16 @@ def edit_candidate(pk):
         return render_template('edit_candidate.html', candidate=candidate)
 
 
-@app.route('/candidates')
-def candidates():
-    candidates = get_all()
-    return render_template('candidate.html', candidates=candidates)
+# @app.route('/candidate')
+# def candidates():
+#     candidates = get_all()
+#     return render_template('candidate.html', candidates=candidates)
 
 
 @app.route('/skills')
-def skills():
-    all_skills = get_all_skills()
-    return render_template('skills.html', skills=all_skills)
+def skill_list():
+    skills = get_all_skills()
+    return render_template('skills.html', skills=skills)
 
 
 if __name__ == '__main__':
